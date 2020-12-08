@@ -15,7 +15,7 @@ def hoststatus(hostname: str, livestatus_host: str, livestatus_port: int):
     # s.sendall(query.encode("utf-8"))
     # s.shutdown(socket.SHUT_WR)
 
-    data = []
+    # data = []
     # while True:
     #     buf_data = s.recv(BUFFER_SIZE)
     #     if not buf_data:
