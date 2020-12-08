@@ -21,4 +21,6 @@
 </div>
 
     
-{%extra_context%}
+{%for k,v in extra_context%}
+{{k}} : {{v}}
+{%endfor%}
