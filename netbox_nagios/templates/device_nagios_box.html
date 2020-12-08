@@ -15,7 +15,7 @@
                 <span
                     class="label label-{{ nagios.state|nagios_status_color }}">{{ nagios.state|nagios_status_string }}</span>
             </td>
-            <td>{{nagios.state}}</td>
+            <td>{{nagios.state|nagios_status_string}}</td>
         </tr>
     </table>
 </div>
