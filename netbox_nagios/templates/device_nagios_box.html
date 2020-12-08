@@ -2,14 +2,14 @@
 
 <div class="panel panel-default">
     <div class="panel-heading"><strong>Centreon</strong>
-        <a href="{{ nagios_base_url }}main.php?p=20202&o=hd&host_name={{ object.name }}" class="btn btn-xs btn-primary"
+        <a href="{{ nagios_base_url }}main.php?autologin=1&token=centreon&useralias=admin&p=20202&o=hd&host_name={{ object.name }}" class="btn btn-xs btn-primary"
             style="float: right;">
             Open in Centreon
         </a>
     </div>
     <table class="table table-hover panel-body attr-table">
         <tr>
-            <td><a href='{{ nagios_base_url }}main.php?p=20202&o=hd&host_name={{ object.name }}'>Host Status</a>
+            <td><a href='{{ nagios_base_url }}main.php?autologin=1&token=centreon&useralias=admin&p=20202&o=hd&host_name={{ object.name }}'>Host Status</a>
             </td>
             <td>
                 <span
