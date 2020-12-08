@@ -44,6 +44,7 @@ class NagiosStatus(PluginTemplateExtension):
             extra_context["nagios"] = livestatus.hoststatus(
                 self.hostname, self.livestatus_host, self.livestatus_port,
             )
+            print(extra_context)
         except Exception:  # pylint: disable=broad-except
             # Be very defensive so that broken Nagios doesn't break Netbox.
             pass
