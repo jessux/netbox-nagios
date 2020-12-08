@@ -33,8 +33,8 @@ def hoststatus(hostname: str, livestatus_host: str, livestatus_port: int):
             'Content-Type': 'text/plain'
         }
         response = requests.request("GET", url, headers=headers, data=payload)
-        json = json.loads(response.decode('utf-8'))
-        result = dict(zip("state",json.state))
+        j = json.loads(response.decode('utf-8'))
+        result = dict(zip("state",j.state))
         print(result)
         return result
 
