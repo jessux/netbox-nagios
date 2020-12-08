@@ -34,6 +34,7 @@ def hoststatus(hostname: str, livestatus_host: str, livestatus_port: int):
         }
         response = requests.request("GET", url, headers=headers, data=payload)
         json = json.loads(response.decode('utf-8'))
-        result = {"state":json.state}
+        result = dict(zip("state",json.state))
+        print(result)
         return result
 
