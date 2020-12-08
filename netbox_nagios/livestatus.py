@@ -21,6 +21,9 @@ def hoststatus(hostname: str, livestatus_host: str, livestatus_port: int):
     #     if not buf_data:
     #         break
     #     data.append(buf_data)
+    # <a href="{{ nagios_base_url }}main.php?autologin=1&useralias=admin&token=centreon&p=20202&o=hd&host_name={{ object.name }}" target="_blank" class="btn btn-info">
+    # <i class="fa fa-thermometer-half" aria-hidden="true"></i> Open in Centreon</a>
+
     # s.close()
     payload = {'username': 'admin','password': 'centreon'}
     response = requests.request("POST", "http://digsflrp1k.dig.intra.groupama.fr/centreon/api/index.php?action=authenticate", data=payload)
