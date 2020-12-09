@@ -36,15 +36,15 @@ def hoststatus(hostname: str, livestatus_host: str, livestatus_port: int):
             'Content-Type': 'text/plain'
         }
         response = requests.request("GET", url, headers=headers, data=payload)
-        print(response.json())
+        print(len(response.json()))
         if len(response.json()) > 0:
             j = json.loads(response.text.encode('utf-8'))[0]
             result = {"state":j["state"]}
             return result
         else:
-            result = {"state":''}
+            result = {"state": 4}
             return result
     else:
-        result = {"state":''}
+        result = {"state": 4}
 
     
