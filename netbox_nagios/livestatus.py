@@ -27,7 +27,6 @@ def hoststatus(hostname: str, livestatus_host: str, livestatus_port: int):
     # s.close()
     payload = {'username': 'admin','password': 'centreon'}
     response = requests.request("POST", "http://digsflrp1k.dig.intra.groupama.fr/centreon/api/index.php?action=authenticate", data=payload)
-    print(response)
     if response.status_code == 200:
         url = "http://digsflrp1k.dig.intra.groupama.fr/centreon/api/index.php?object=centreon_realtime_hosts&action=list&search="+hostname
         payload = "{\r\n  \"action\": \"show\",\r\n  \"object\": \"host\"\r\n}"
@@ -37,6 +36,7 @@ def hoststatus(hostname: str, livestatus_host: str, livestatus_port: int):
             'Content-Type': 'text/plain'
         }
         response = requests.request("GET", url, headers=headers, data=payload)
+        print(response)
         j = json.loads(response.text.encode('utf-8'))[0]
         result = {"state":j["state"]}
         return result
