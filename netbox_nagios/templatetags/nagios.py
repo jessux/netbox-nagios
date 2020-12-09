@@ -11,5 +11,5 @@ def nagios_status_color(value):
 
 @register.filter(is_safe=True)
 def nagios_status_string(value):
-    strings = {0: "UP",2: "DOWN", 3: "UNREACHABLE"}
+    strings = {0: "UP",1: "DOWN", 3: "UNREACHABLE"}
     return strings.get(int(value), "NOT FOUND")
