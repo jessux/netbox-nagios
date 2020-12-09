@@ -36,7 +36,8 @@ def hoststatus(hostname: str, livestatus_host: str, livestatus_port: int):
             'Content-Type': 'text/plain'
         }
         response = requests.request("GET", url, headers=headers, data=payload)
-        if response.text != "[]":
+        print(response.json)
+        if response.json != "[]":
             j = json.loads(response.text.encode('utf-8'))[0]
             result = {"state":j["state"]}
             return result
