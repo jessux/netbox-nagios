@@ -25,7 +25,7 @@ def hoststatus(hostname: str, livestatus_host: str, livestatus_port: int):
     # <i class="fa fa-thermometer-half" aria-hidden="true"></i> Open in Centreon</a>
 
     # s.close()
-    payload = {'username': 'admin','password': 'centreon'}
+    payload = {'username': 'admin','password': 'J3M3l3l4p1;'}
     response = requests.request("POST", "http://digsflrp1k.dig.intra.groupama.fr/centreon/api/index.php?action=authenticate", data=payload)
     if response.status_code == 200:
         url = "http://digsflrp1k.dig.intra.groupama.fr/centreon/api/index.php?object=centreon_realtime_hosts&action=list&search="+hostname
